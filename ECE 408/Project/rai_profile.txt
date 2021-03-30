@@ -1,0 +1,12 @@
+profile:
+  id: 6049ba20e687e5467a26a79f
+  firstname: Lukas
+  lastname: Dumasius
+  username: lukasd2
+  email: lukasd2@illinois.edu
+  access_key: auth0|6049ba2024a0a20068938b30
+  secret_key: JGFyZ29uMmkkdj0xOSRtPTMyNzY4LHQ9NCxwPTQkSWd6V1VMS2FhY2NMTnhramZmVlk2QSQzRENsRFlEaDlKRnlKTmVjVlhLOEE1YTMvdzU0S203bW95Kyt0MU0vUlI0
+  affiliation: UIUC
+  team:
+    name: ""
+  role: ECE408
