@@ -1,0 +1,141 @@
+Submission for:
+Lukas Dumasius
+lukasd2
+ECE@UIUC
+
+1. Show output of rai running Mini-DNN on the CPU (CPU convolution implemented) for batch size of 1k images
+
+user@DESKTOP-OBU993S:/mnt/c/Users/Admin/Documents/SPRING 2021/ECE 408/Project$ ./rai -p ece408_project/ --queue rai_amd64_ece408
+Dynamic Rate Limit: 30s
+✱ Checking your authentication credentials.
+✱ Preparing your project directory for upload.
+✱ Uploading your project directory. This may take a few minutes.
+ 12.81 KiB / 12.81 KiB ┃▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓┃ 100.00% 112.03 KiB/s 0s
+✱ Folder uploaded. Server is now processing your submission.
+✱ Your job request has been posted to the queue.
+✱ Server has accepted your job submission and started to configure the container.
+⣾ Waiting for the server to process your request... ✱ Downloading your code.
+✱ Using jnativ/ece408_minidnn_docker_sp21:latest as container image.
+✱ Starting container.
+✱ Running /bin/bash -c "mkdir /build/student_code && cp -rv /src/* /build/student_code"
+'/src/custom' -> '/build/student_code/custom'
+'/src/custom/.idea' -> '/build/student_code/custom/.idea'
+'/src/custom/.idea/.name' -> '/build/student_code/custom/.idea/.name'
+'/src/custom/.idea/vcs.xml' -> '/build/student_code/custom/.idea/vcs.xml'
+'/src/custom/.idea/workspace.xml' -> '/build/student_code/custom/.idea/workspace.xml'
+'/src/custom/cpu-new-forward.cc' -> '/build/student_code/custom/cpu-new-forward.cc'
+'/src/custom/cpu-new-forward.h' -> '/build/student_code/custom/cpu-new-forward.h'
+'/src/custom/gpu-new-forward.h' -> '/build/student_code/custom/gpu-new-forward.h'
+'/src/custom/new-forward.cu' -> '/build/student_code/custom/new-forward.cu'
+'/src/final.cc' -> '/build/student_code/final.cc'
+'/src/m1.cc' -> '/build/student_code/m1.cc'
+'/src/m2.cc' -> '/build/student_code/m2.cc'
+'/src/m3.cc' -> '/build/student_code/m3.cc'
+'/src/rai_build.yml' -> '/build/student_code/rai_build.yml'
+'/src/readme.md' -> '/build/student_code/readme.md'
+✱ Running /bin/bash -c "cp /ece408/project/build/weights-86.bin /build"
+✱ Running /bin/bash -c "cp -rv /src/custom/* /ece408/project/src/layer/custom"
+'/src/custom/cpu-new-forward.cc' -> '/ece408/project/src/layer/custom/cpu-new-forward.cc'
+'/src/custom/cpu-new-forward.h' -> '/ece408/project/src/layer/custom/cpu-new-forward.h'
+'/src/custom/gpu-new-forward.h' -> '/ece408/project/src/layer/custom/gpu-new-forward.h'
+'/src/custom/new-forward.cu' -> '/ece408/project/src/layer/custom/new-forward.cu'
+✱ Running /bin/bash -c "cmake -DCMAKE_CXX_FLAGS=-pg /ece408/project/ && make -j8"
+-- The C compiler identification is GNU 7.5.0
+-- The CXX compiler identification is GNU 7.5.0
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Looking for pthread_create
+-- Looking for pthread_create - not found
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Found Threads: TRUE
+-- Found CUDA: /usr/local/cuda (found version "10.2")
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /build
+[  3%] Building NVCC (Device) object src/CMakeFiles/GpuConv.dir/layer/custom/GpuConv_generated_new-forward.cu.o
+Scanning dependencies of target ece408net
+[  6%] Building NVCC (Device) object src/CMakeFiles/GpuConv.dir/layer/custom/GpuConv_generated_gpu-utils.cu.o
+[ 10%] Building CXX object CMakeFiles/ece408net.dir/ece408net.cc.o
+[ 13%] Linking CXX static library libece408net.a
+[ 13%] Built target ece408net
+Scanning dependencies of target GpuConv
+[ 17%] Linking CXX static library libGpuConv.a
+[ 17%] Built target GpuConv
+Scanning dependencies of target MiniDNNLib
+[ 20%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/layer/ave_pooling.cc.o
+[ 24%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/layer/conv_cpu.cc.o
+[ 27%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/layer/conv.cc.o
+[ 31%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/network.cc.o
+[ 34%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/mnist.cc.o
+[ 37%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/layer/conv_cust.cc.o
+[ 41%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/layer/fully_connected.cc.o
+[ 44%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/layer/max_pooling.cc.o
+[ 48%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/layer/relu.cc.o
+[ 51%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/layer/sigmoid.cc.o
+[ 55%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/layer/softmax.cc.o
+[ 58%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/loss/cross_entropy_loss.cc.o
+[ 62%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/loss/mse_loss.cc.o
+[ 65%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/optimizer/sgd.cc.o
+[ 68%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/layer/custom/cpu-new-forward.cc.o
+[ 72%] Linking CXX static library libMiniDNNLib.a
+[ 72%] Built target MiniDNNLib
+Scanning dependencies of target final
+Scanning dependencies of target m3
+Scanning dependencies of target m1
+Scanning dependencies of target m2
+[ 75%] Building CXX object CMakeFiles/final.dir/final.cc.o
+[ 79%] Building CXX object CMakeFiles/m1.dir/m1.cc.o
+[ 82%] Building CXX object CMakeFiles/m2.dir/m2.cc.o
+[ 86%] Building CXX object CMakeFiles/m3.dir/m3.cc.o
+[ 89%] Linking CXX executable m3
+[ 93%] Linking CXX executable m2
+[ 96%] Linking CXX executable final
+[100%] Linking CXX executable m1
+[100%] Built target m3
+[100%] Built target final
+[100%] Built target m2
+[100%] Built target m1
+✱ Running /bin/bash -c "time ./m1 1000"
+Test batch size: 1000
+Loading fashion-mnist data...Done
+Loading model...Done
+Conv-CPU==
+Op Time: 8297.14 ms
+Conv-CPU==
+Op Time: 24041.9 ms
+Test Accuracy: 0.886
+real    1m23.748s
+user    1m23.645s
+sys     0m0.100s
+✱ Running /bin/bash -c "gprof -Q m1 gmon.out | grep "conv_forward_cpu""
+83.39     32.34    32.34        2    16.17    16.17  conv_forward_cpu(float*, float const*, float const*, int, int, int, int, int, int)
+✱ The build folder has been uploaded to http://s3.amazonaws.com/files.rai-project.com/userdata/build-60528f020931a0021fa38b27.tar.gz. The data will be present for only a short duration of time.
+user@DESKTOP-OBU993S:/mnt/c/Users/Admin/Documents/SPRING 2021/ECE 408/Project$
+
+2. List Op Times (CPU convolution implemented) for batch size of 1k images
+
+Convolution Op Time 1: Op Time: 8297.14 ms
+Convolution Op Time 2: Op Time: 24041.9 ms
+
+3. List whole program execution time (CPU convolution implemented) for batch size of 1k images
+
+Total program execution time: real    1m23.748s
+
+4. Show percentage of total execution time of your program spent in your forward pass function with gprof
+
+As you can see above in the ouput, the program spent 83.39% of the time in the conv_forward_cpu function.
